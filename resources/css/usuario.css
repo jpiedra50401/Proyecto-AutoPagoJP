@@ -1,0 +1,144 @@
+
+/* Configuración de Tipografía */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #ECF0F1;
+    margin: 0;
+    padding: 0;
+}
+
+/* Títulos Primarios */
+h1 {
+    font-weight: bold;
+    font-size: 36px;
+    color: #2C3E50;
+    margin-bottom: 20px;
+}
+
+/* Títulos Secundarios */
+h2, h3 {
+    font-weight: 600;
+    font-size: 24px;
+    color: #333333;
+    margin-bottom: 15px;
+}
+
+/* Texto Plano */
+p, span, label {
+    font-weight: 400;
+    font-size: 16px;
+    color: #333333;
+}
+
+/* Acentos y Enlaces */
+a {
+    font-weight: 400;
+    font-size: 16px;
+    color: #FF5722;
+    text-decoration: underline;
+}
+
+/* Botones */
+button {
+    background-color: #27AE60;
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    padding: 15px 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #2C3E50;
+}
+
+/* Inputs */
+input[type="text"],
+input[type="number"],
+input[type="password"],
+input[type="email"] {
+    font-size: 18px;
+    color: #333333;
+    padding: 10px;
+    border: 2px solid #2C3E50;
+    border-radius: 5px;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+/* Mensajes de Error */
+.error {
+    color: #E74C3C;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+/* Mensajes de Éxito */
+.success {
+    color: #27AE60;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+/* Contenedores */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Tarjetas o Paneles */
+.card {
+    background-color: #FFFFFF;
+    border: 1px solid #333333;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+/* Iconos */
+.icon {
+    font-size: 24px;
+    color: #F39C12;
+}
+
+/* Colores Adicionales */
+.bg-primary {
+    background-color: #2C3E50;
+    color: #FFFFFF;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.bg-secondary {
+    background-color: #FF5722;
+    color: #FFFFFF;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* Tablas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table th, table td {
+    border: 1px solid #333333;
+    text-align: left;
+    padding: 10px;
+}
+
+table th {
+    background-color: #27AE60;
+    color: #FFFFFF;
+}
+
+table tr:nth-child(even) {
+    background-color: #ECF0F1;
+}
