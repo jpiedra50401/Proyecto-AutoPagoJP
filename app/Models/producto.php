@@ -7,19 +7,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
-use Laravel\Jetstream\HasProfilePhoto;
-use Laravel\Sanctum\HasApiTokens;
 
 class producto extends model
 {
-    use HasApiTokens;
 
     /** @use HasFactory<\Database\Factories\UserFactory> */
-    use HasFactory;
-    use HasProfilePhoto;
-    use Notifiable;
-    use TwoFactorAuthenticatable;
-
     /**
      * The attributes that are mass assignable.
      *
@@ -33,8 +25,16 @@ class producto extends model
         'Marca',
         'Stock',
         'Descripcion',
-        'Precio',
+        'Precio_Compra',
+        'Precio_Venta',
+        'ubicacion',
+        'Estado',
     ];
 
     public $timestamps = true;
+
+    public function productoPuntos()
+    {
+        return $this->hasMany(ProductoPunto::class, 'Id_ProductoFK', 'Id_Producto');
+    }
 }

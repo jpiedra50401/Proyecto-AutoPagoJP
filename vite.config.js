@@ -1,23 +1,72 @@
 import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
+import { viteStaticCopy } from 'vite-plugin-static-copy'
 
 export default defineConfig({
+    build: {
+        manifest: true,
+        rtl: true,
+        outDir: 'public/build/',
+        cssCodeSplit: true,
+        rollupOptions: {
+            output: {
+                assetFileNames: (css) => {
+                    if (css.name.split('.').pop() == 'css') {
+                        return 'css/' + `[name]` + '.min.' + 'css';
+                    } else {
+                        return 'icons/' + css.name;
+                    }
+                },
+                entryFileNames: 'js/' + `[name]` + `.js`,
+            },
+        },
+    },
     plugins: [
+        
         laravel({
-            input: ['resources/scss/app.scss', 
-                    'resources/js/app.js',
-                    // 'resources/js/jquery.js',
-                    'resources/css/prueba.css',
-                    'resources/js/prueba.js',
-                    'resources/css/reportes.css'
-                ],
+            input: ['resources/css/style.css',
+                    'resources/js/script.js',
+                    'resources/js/productos.js',
+                    'resources/js/puntos.js',
+                    'resources/js/productoPuntos',],
+                    
             refresh: true,
         }),
+
+        viteStaticCopy({
+            targets: [
+                {
+                    src: 'resources/css',
+                    dest: ''
+                },
+                {
+                    src: 'resources/fonts',
+                    dest: ''
+                },
+                {
+                    src: 'resources/img',
+                    dest: ''
+                },
+                {
+                    src: 'resources/js',
+                    dest: ''
+                },
+                {
+                    src: 'resources/json',
+                    dest: ''
+                },
+                {
+                    src: 'resources/plugins',
+                    dest: ''
+                },
+                {
+                    src: 'resources/scss',
+                    dest: ''
+                },
+            ]
+        }),
     ],
-    resolve: {
-        alias: {
-            '@': '/resources',
-            '$': 'jQuery'
-        }
-    }
+
 });
+
+
